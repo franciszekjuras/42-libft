@@ -6,13 +6,13 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/27 18:38:51 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/02/27 19:40:53 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-void	*memset(void *b, int c, size_t n);
+void	*ft_memset(void *b, int c, size_t n);
 
 #endif

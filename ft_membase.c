@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mem.c                                              :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:34:32 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/27 18:55:09 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/02/27 19:16:22 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-void	*memset(void *b, int c, size_t n)
+/**
+ * @brief Set n bytes in memory with c
+ * 
+ * @param b pointer to memory start
+ * @param c byte to set
+ * @param n number of bytes
+ * @return void* b
+ */
+void	*ft_memset(void *b, int c, size_t n)
 {
 	unsigned char	uc;
 	unsigned char	*mem;

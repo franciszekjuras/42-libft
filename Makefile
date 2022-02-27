@@ -1,7 +1,7 @@
 NAME = libft.a
 
 FILES = \
-	mem
+	ft_memset
 
 OFILES = $(FILES:%=%.o)
 
