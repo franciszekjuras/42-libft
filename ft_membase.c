@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_membase.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:34:32 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/27 19:16:22 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/02/28 19:52:52 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-/**
- * @brief Set n bytes in memory with c
- * 
- * @param b pointer to memory start
- * @param c byte to set
- * @param n number of bytes
- * @return void* b
- */
 void	*ft_memset(void *b, int c, size_t n)
 {
 	unsigned char	uc;
@@ -36,4 +28,9 @@ void	*ft_memset(void *b, int c, size_t n)
 		i += 1;
 	}
 	return (b);
+}
+
+void	ft_bzero(void *b, size_t len)
+{
+	ft_memset(b, 0, len);
 }

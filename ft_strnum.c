@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbase.c                                       :+:      :+:    :+:   */
+/*   ft_strnum.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 14:11:56 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/28 19:19:29 by fjuras           ###   ########.fr       */
+/*   Created: 2022/02/28 16:07:34 by fjuras            #+#    #+#             */
+/*   Updated: 2022/02/28 17:29:43 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+static int	ft_atoi_ll(const char *np, int i, int s, int base)
 {
-	size_t	i;
+	int	r;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	i--;
+	r = 0;
+	while (i >= 0)
+	{
+		r += s * (np[i] - '0');
+		s *= base;
+		i--;
+	}
+	return (r);
 }
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+int	ft_atoi(const char *np)
 {
-	size_t	i;
+	int	s;
+	int	i;
 
+	while (ft_isspace(*np))
+		np++;
+	s = 1;
+	if (*np == '-')
+		s = -1;
+	if (*np == '-' || *np == '+')
+		np++;
 	i = 0;
-	while (i < maxlen && s[i] != '\0')
+	while (ft_isdigit(np[i]))
 		i++;
-	return (i);
-}
-
-int	ft_strempty(const char *s)
-{
-	return (s[0] == '\0');
+	return (ft_atoi_ll(np, i, s, 10));
 }

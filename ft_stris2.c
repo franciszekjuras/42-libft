@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strbase.c                                       :+:      :+:    :+:   */
+/*   ft_stris2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 14:11:56 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/28 19:19:29 by fjuras           ###   ########.fr       */
+/*   Created: 2022/02/28 15:52:23 by fjuras            #+#    #+#             */
+/*   Updated: 2022/02/28 18:53:25 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isprint(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	return (c >= 32 && c < 127);
 }
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+int	ft_isascii(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < maxlen && s[i] != '\0')
-		i++;
-	return (i);
+	return (c >= 0 && c < 128);
 }
 
-int	ft_strempty(const char *s)
+int	ft_isspace(int c)
 {
-	return (s[0] == '\0');
+	return (c == ' ' || c == '\n' || c == '\r'
+		|| c == '\t' || c == '\v' || c == '\f');
+}
+
+int	ft_isinset(int c, const char *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i] != '\0')
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
