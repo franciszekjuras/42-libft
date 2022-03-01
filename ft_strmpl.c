@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 18:15:40 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/28 19:59:32 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/01 13:03:09 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ char	*ft_strtrim(char const *str, char const *set)
 static int	next_word(char **beg, char **end, char delim)
 {
 	char	*pos;
+
 	pos = *end;
-	while (*pos == delim)
-		pos += 1;
+	if (delim != 0)
+		while (*pos == delim)
+			pos += 1;
 	if (*pos == 0)
 		return (0);
 	*beg = pos;
@@ -58,21 +60,21 @@ static int	next_word(char **beg, char **end, char delim)
 	return (1);
 }
 
-char	**ft_split(char *str, char delim)
+char	**ft_split(char const *str, char delim)
 {
 	char	*beg;
 	char	*end;
 	int		count;
 	char	**words;
 
-	end = str;
+	end = (char *) str;
 	count = 0;
 	while (next_word(&beg, &end, delim))
 		count += 1;
 	words = malloc((count + 1) * sizeof(char *));
 	if (words == 0)
 		return (0);
-	end = str;
+	end = (char *) str;
 	count = 0;
 	while (next_word(&beg, &end, delim))
 	{

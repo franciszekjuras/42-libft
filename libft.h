@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/28 19:49:05 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/01 12:52:30 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 # define LIBFT_H
 # include <stddef.h>
 
-int		ft_isascii(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isprint(int c);
-int		ft_isspace(int c);
-int		ft_islower(int c);
-int		ft_isupper(int c);
-int		ft_isinset(int c, const char *set);
-int		ft_strempty(const char *s);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_atoi(const char *np);
+unsigned int	ft_absu(int n);
+int				ft_isascii(int c);
+int				ft_isalpha(int c);
+int				ft_isdigit(int c);
+int				ft_isalnum(int c);
+int				ft_isprint(int c);
+int				ft_isspace(int c);
+int				ft_islower(int c);
+int				ft_isupper(int c);
+int				ft_isinset(int c, const char *set);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+int				ft_strempty(const char *s);
+int				ft_toupper(int c);
+int				ft_tolower(int c);
+int				ft_atoi(const char *np);
 
 /**
  * @brief 
@@ -37,7 +42,7 @@ int		ft_atoi(const char *np);
  * @param size size of single array element
  * @return void* pointer to allocated memory
  */
-void	*ft_calloc(size_t number, size_t size);
+void			*ft_calloc(size_t number, size_t size);
 
 /**
  * @brief
@@ -46,7 +51,16 @@ void	*ft_calloc(size_t number, size_t size);
  * 
  * @param arr array of pointers
  */
-void	*ft_freeparr(void **arr);
+void			*ft_freeparr(void **arr);
+
+/**
+ * @brief 
+ * Allocate and return string representing the integer received as an argument.
+ * 
+ * @param n integer to convert
+ * @return char* pointer to string representing the integer
+ */
+char			*ft_itoa(int n);
 
 /**
  * @brief Set len bytes in memory with 0
@@ -54,7 +68,7 @@ void	*ft_freeparr(void **arr);
  * @param b memory address
  * @param len number of bytes
  */
-void	ft_bzero(void *b, size_t len);
+void			ft_bzero(void *b, size_t len);
 
 /**
  * @brief  
@@ -66,7 +80,7 @@ void	ft_bzero(void *b, size_t len);
  * @param len number of bytes to search
  * @return void* pointer to first occurence of byte c or NULL if not found
  */
-void	*ft_memchr(const void *b, int c, size_t len);
+void			*ft_memchr(const void *b, int c, size_t len);
 
 /**
  * @brief  
@@ -78,7 +92,7 @@ void	*ft_memchr(const void *b, int c, size_t len);
  * @param len number of bytes to search
  * @return void* pointer to last occurence of byte c or NULL if not found
  */
-void	*ft_memrchr(const void *b, int c, size_t len);
+void			*ft_memrchr(const void *b, int c, size_t len);
 
 /**
  * @brief Set n bytes in memory with c
@@ -88,7 +102,7 @@ void	*ft_memrchr(const void *b, int c, size_t len);
  * @param n number of bytes
  * @return void* b
  */
-void	*ft_memset(void *b, int c, size_t n);
+void			*ft_memset(void *b, int c, size_t n);
 
 /**
  * @brief 
@@ -102,7 +116,7 @@ void	*ft_memset(void *b, int c, size_t n);
  * @return void* pointer to byte after copied c in dest or NULL
  * if character c wasn't found
  */
-void	*ft_memccpy(void *dst, const void *src, int c, size_t len);
+void			*ft_memccpy(void *dst, const void *src, int c, size_t len);
 
 /**
  * @brief 
@@ -116,7 +130,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t len);
  * @return int difference between first not equal bytes
  * or 0 if all bytes are equal
  */
-int		ft_memcmp(const void *b1, const void *b2, size_t len);
+int				ft_memcmp(const void *b1, const void *b2, size_t len);
 
 /**
  * @brief 
@@ -128,7 +142,7 @@ int		ft_memcmp(const void *b1, const void *b2, size_t len);
  * @param len number of bytes
  * @return void* pointer to destination
  */
-void	*ft_memcpy(void *dst, const void *src, size_t len);
+void			*ft_memcpy(void *dst, const void *src, size_t len);
 
 /**
  * @brief Copy len bytes between possibly overlaping blocks of memory
@@ -138,7 +152,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t len);
  * @param len number of bytes
  * @return void* pointer to destination
  */
-void	*ft_memmove(void *dst, const void *src, size_t len);
+void			*ft_memmove(void *dst, const void *src, size_t len);
 
 /**
  * @brief
@@ -149,7 +163,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
  * @param c searched character
  * @return char* pointer to first found character
  */
-char	*ft_strchr(const char *s, int c);
+char			*ft_strchr(const char *s, int c);
 
 /**
  * @brief Return pointer to last occurence of character c
@@ -159,7 +173,7 @@ char	*ft_strchr(const char *s, int c);
  * @param c searched character
  * @return char* pointer to last found character
  */
-char	*ft_strrchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c);
 
 /**
  * @brief Append string src to dst, NUL-terminating the result,
@@ -171,7 +185,7 @@ char	*ft_strrchr(const char *s, int c);
  * @return size_t sum of lengths of both strings
  * (if ft_strlen(dst) >= dstsize, then dstsize is treated as dst string length)
  */
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 /**
  * @brief Copy up to dstsize - 1 characters from the string src to dst,
@@ -182,7 +196,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
  * @param dstsize desination buffer size
  * @return size_t length of source string 
  */
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 /**
  * @brief Duplicate string
@@ -190,7 +204,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
  * @param str string to duplicate
  * @return char* pointer to duplicated string
  */
-char	*ft_strdup(const char *str);
+char			*ft_strdup(const char *str);
 
 /**
  * @brief Duplicate string of maximal length `len`
@@ -199,15 +213,15 @@ char	*ft_strdup(const char *str);
  * @param len maximal length of string
  * @return char* pointer to duplicated string
  */
-char	*ft_strndup(const char *str, size_t len);
+char			*ft_strndup(const char *str, size_t len);
 
 /**
  * @brief 
- * Allocate and return empty string that can hold len characters
- * (excluding termination character)
+ * Allocate and return string intialized with 0s that can hold `len` characters
+ * (`len + 1` including termination character)
  * @return char* pointer to empty string
  */
-char	*ft_stralloc(size_t len);
+char			*ft_stralloc(size_t len);
 
 /**
  * @brief 
@@ -217,7 +231,7 @@ char	*ft_stralloc(size_t len);
  * @param s2 second string
  * @return char* pointer to joined string
  */
-char	*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 /**
  * @brief Return length of string
@@ -225,7 +239,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
  * @param s string
  * @return size_t length of string
  */
-size_t	ft_strlen(const char *s);
+size_t			ft_strlen(const char *s);
 
 /**
  * @brief Same as ft_strlen, but returns nothing greater than maxlen.
@@ -234,7 +248,7 @@ size_t	ft_strlen(const char *s);
  * @param maxlen maximal number of characters to check
  * @return size_t length of string or maxlen if no termination found
  */
-size_t	ft_strnlen(const char *s, size_t maxlen);
+size_t			ft_strnlen(const char *s, size_t maxlen);
 
 /**
  * @brief Compare strings s1 and s2
@@ -244,7 +258,7 @@ size_t	ft_strnlen(const char *s, size_t maxlen);
  * @return int difference between first not matching characters
  * or 0 if strings are equal
  */
-int		ft_strcmp(const char *s1, const char *s2);
+int				ft_strcmp(const char *s1, const char *s2);
 
 /**
  * @brief Compare strings s1 and s2, comparing no more
@@ -256,9 +270,20 @@ int		ft_strcmp(const char *s1, const char *s2);
  * @return int difference between first not matching characters
  * or 0 if strings are equal up to len characters
  */
-int		ft_strncmp(const char *s1, const char *s2, size_t len);
+int				ft_strncmp(const char *s1, const char *s2, size_t len);
 
-char	**ft_split(char *str, char delim);
+/**
+ * @brief
+ * Allocate and return a null-terminated array of newly allocated strings
+ * obtained by splitting `str` using the character `delim` as a delimiter.
+ * 
+ * @param str string to split
+ * @param delim delimiting character
+ * @return char** pointer to array of strings
+ */
+char			**ft_split(char const *str, char delim);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 /**
  * @brief 
@@ -272,7 +297,7 @@ char	**ft_split(char *str, char delim);
  * of little in big or NULL if not found.
  * If little is an empty string, return big.
  */
-char	*ft_strnstr(const char *big, const char *little, size_t len);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
 
 /**
  * @brief 
@@ -282,7 +307,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
  * @param set characters set to trim string
  * @return char* pointer to trimmed string
  */
-char	*ft_strtrim(char const *str, char const *set);
+char			*ft_strtrim(char const *str, char const *set);
 
 /**
  * @brief 
@@ -294,6 +319,6 @@ char	*ft_strtrim(char const *str, char const *set);
  * @param len maximal length of substring
  * @return char* pointer to allocated substring
  */
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

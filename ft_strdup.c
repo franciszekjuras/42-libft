@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:55:08 by fjuras            #+#    #+#             */
-/*   Updated: 2022/02/28 19:13:00 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/01 12:43:08 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ char	*ft_strdup(const char *str)
 	return (dup);
 }
 
-#include <stdio.h>
-
 char	*ft_strndup(const char *str, size_t len)
 {
 	char	*dup;
@@ -39,11 +37,6 @@ char	*ft_strndup(const char *str, size_t len)
 	ft_memcpy(dup, str, len);
 	dup[len] = '\0';
 	return (dup);
-}
-
-char	*ft_stralloc(size_t len)
-{
-	return (ft_calloc(len + 1, sizeof(char)));
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
