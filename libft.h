@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/12 09:27:42 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/12 14:56:51 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+int				ft_putcharn_fd(char c, int fd);
+int				ft_putstrn_fd(char *s, int fd);
+int				ft_putendln_fd(char *s, int fd);
+int				ft_putnbrn_fd(int n, int fd);
 int				ft_strempty(const char *s);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
