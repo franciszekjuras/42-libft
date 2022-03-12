@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 12:44:58 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/01 13:05:43 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/12 09:29:55 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	ft_putnbr_fd(int n, int fd)
 	un = ft_absu(n);
 	i = 20 - 1;
 	buf[i--] = 0;
-	while(un != 0)
+	while (un != 0)
 	{
-		buf[i--] = '0' +  un % 10;
+		buf[i--] = '0' + un % 10;
 		un /= 10;
 	}
 	if (n == 0)

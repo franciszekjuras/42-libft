@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:07:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/01 12:12:43 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/12 09:27:25 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ char	*ft_itoa(int n)
 	un = ft_absu(n);
 	i = 20 - 1;
 	buf[i--] = 0;
-	while(un != 0)
+	while (un != 0)
 	{
-		buf[i--] = '0' +  un % 10;
+		buf[i--] = '0' + un % 10;
 		un /= 10;
 	}
 	if (n == 0)

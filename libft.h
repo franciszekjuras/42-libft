@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/01 12:52:30 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/12 09:27:42 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,7 +283,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t len);
  */
 char			**ft_split(char const *str, char delim);
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 /**
  * @brief 
