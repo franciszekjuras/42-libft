@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/12 09:27:42 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/12 20:23:33 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int				ft_isspace(int c);
 int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_isinset(int c, const char *set);
+int				ft_idxinset(int c, const char *set);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
