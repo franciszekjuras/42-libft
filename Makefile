@@ -3,7 +3,7 @@ NAME = libft.a
 FILES = \
 	ft_alloc ft_mapi ft_math ft_membase ft_memcmp ft_memcpy ft_put \
 	ft_strbase ft_strcase ft_strcmp ft_strcpy ft_strdup ft_stris \
-	ft_stris2 ft_strmpl ft_strnum 
+	ft_stris2 ft_strmpl ft_strnum ft_putn
 
 OFILES = $(FILES:%=%.o)
 
