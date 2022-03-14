@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 23:03:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/14 20:09:18 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/14 20:14:00 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ long long	ft_strtoll_e(const char *np, char **ep, int base, int *err)
 	*err = 0;
 	s = ft_strtoi_parse_prefix_e((char **) &np, &base, err);
 	r = 0;
-	if (!err)
+	if (!(*err))
 	{
 		if (s > 0)
 			r = ft_strtoll_raw_pos_e_(np, (char **) &np, base, err);
