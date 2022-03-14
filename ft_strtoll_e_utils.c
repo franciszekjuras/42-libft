@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:47:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/14 16:13:40 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/14 20:09:43 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_chartonum_base(char c, int base)
 	return (r);
 }
 
-int	ft_strtoi_parse_prefix_e(const char **npp, int *base, int *err)
+int	ft_strtoi_parse_prefix_e(char **npp, int *base, int *err)
 {
 	const char	*np;
 	int			sign;
@@ -43,7 +43,7 @@ int	ft_strtoi_parse_prefix_e(const char **npp, int *base, int *err)
 		sign = -1;
 	if (*np == '-' || *np == '+')
 		np++;
-	*npp = np;
+	*npp = (char *) np;
 	if (*base < 2 || *base > 36)
 		*err |= FT_STRTOI_BASE;
 	else if (ft_chartonum_base(*np, *base) < 0)

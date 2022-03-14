@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 23:03:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/14 16:10:33 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/14 20:09:18 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_strtoll_get_limits(
 }
 
 static unsigned long long	ft_strtoll_raw_pos_e_(
-	const char *np, const char **ep, int base, int *err)
+	const char *np, char **ep, int base, int *err)
 {
 	long long	max_dv_base;
 	int			max_md_base;
@@ -55,12 +55,12 @@ static unsigned long long	ft_strtoll_raw_pos_e_(
 	}
 	while (c >= 0)
 		c = ft_chartonum_base(*np++, base);
-	*ep = (np - 1);
+	*ep = (char *) (np - 1);
 	return (r);
 }
 
 static long long	ft_strtoll_raw_neg_e_(
-	const char *np, const char **ep, int base, int *err)
+	const char *np, char **ep, int base, int *err)
 {
 	long long	min_dv_base;
 	int			min_md_base;
@@ -84,26 +84,26 @@ static long long	ft_strtoll_raw_neg_e_(
 	}
 	while (c >= 0)
 		c = ft_chartonum_base(*np++, base);
-	*ep = (np - 1);
+	*ep = (char *) (np - 1);
 	return (r);
 }
 
-long long	ft_strtoll_e(const char *np, const char **ep, int base, int *err)
+long long	ft_strtoll_e(const char *np, char **ep, int base, int *err)
 {
 	long long			r;
 	int					s;
 
 	*err = 0;
-	s = ft_strtoi_parse_prefix_e(&np, &base, err);
+	s = ft_strtoi_parse_prefix_e((char **) &np, &base, err);
 	r = 0;
 	if (!err)
 	{
 		if (s > 0)
-			r = ft_strtoll_raw_pos_e_(np, &np, base, err);
+			r = ft_strtoll_raw_pos_e_(np, (char **) &np, base, err);
 		else
-			r = ft_strtoll_raw_neg_e_(np, &np, base, err);
+			r = ft_strtoll_raw_neg_e_(np, (char **) &np, base, err);
 	}
 	if (ep != 0)
-		*ep = np;
+		*ep = (char *) np;
 	return (r);
 }

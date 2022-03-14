@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/14 16:07:20 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/14 20:08:06 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ int				ft_tolower(int c);
 int				ft_atoi(const char *np);
 
 int				ft_chartonum_base(char c, int base);
-int				ft_strtoi_parse_prefix_e(const char **npp, int *base, int *err);
+int				ft_strtoi_parse_prefix_e( char **npp, int *base, int *err);
 long long		ft_strtoll_e(
-					const char *np, const char **ep, int base, int *err);
+					const char *np, char **ep, int base, int *err);
 t_ull			ft_strtoull_e(
-					const char *np, const char **ep, int base, int *err);
+					const char *np, char **ep, int base, int *err);
 long long		ft_strtonum(
-					const char **npp, long long min, long long max, int *err);
+					char **npp, long long min, long long max, int *err);
 
 /**
  * @brief 
