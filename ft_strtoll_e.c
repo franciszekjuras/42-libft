@@ -6,22 +6,12 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 23:03:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/14 15:38:52 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/14 16:10:33 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "libft.h"
-
-static int	ft_strtoi_validate_base_e_(int base, int *err)
-{
-	if (base < 2 || base > 36)
-	{
-		*err |= FT_STRTOI_BASE;
-		return (0);
-	}
-	return (1);
-}
 
 static void	ft_strtoll_get_limits(
 	long long limit, long long *lim_dv_base, int *lim_md_base, int base)
@@ -41,7 +31,7 @@ static void	ft_strtoll_get_limits(
 }
 
 static unsigned long long	ft_strtoll_raw_pos_e_(
-	const char *np, char **ep, int base, int *err)
+	const char *np, const char **ep, int base, int *err)
 {
 	long long	max_dv_base;
 	int			max_md_base;
@@ -70,7 +60,7 @@ static unsigned long long	ft_strtoll_raw_pos_e_(
 }
 
 static long long	ft_strtoll_raw_neg_e_(
-	const char *np, char **ep, int base, int *err)
+	const char *np, const char **ep, int base, int *err)
 {
 	long long	min_dv_base;
 	int			min_md_base;
@@ -98,11 +88,10 @@ static long long	ft_strtoll_raw_neg_e_(
 	return (r);
 }
 
-long long	ft_strtoll_e(const char *np, char **ep, int base, int *err)
+long long	ft_strtoll_e(const char *np, const char **ep, int base, int *err)
 {
 	long long			r;
 	int					s;
-	int					max;
 
 	*err = 0;
 	s = ft_strtoi_parse_prefix_e(&np, &base, err);

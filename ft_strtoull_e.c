@@ -6,22 +6,12 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 23:03:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/14 15:48:51 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/03/14 16:10:40 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "libft.h"
-
-static int	ft_strtoi_validate_base_e_(int base, int *err)
-{
-	if (base < 2 || base > 36)
-	{
-		*err |= FT_STRTOI_BASE;
-		return (0);
-	}
-	return (1);
-}
 
 static void	ft_strtoll_get_limits(
 	unsigned long long limit, unsigned long long *lim_dv_base,
@@ -33,7 +23,7 @@ static void	ft_strtoll_get_limits(
 }
 
 static unsigned long long	ft_strtoull_raw_e_(
-	const char *np, char **ep, int base, int *err)
+	const char *np, const char **ep, int base, int *err)
 {
 	unsigned long long	max_dv_base;
 	int					max_md_base;
@@ -62,11 +52,10 @@ static unsigned long long	ft_strtoull_raw_e_(
 }
 
 unsigned long long	ft_strtoull_e(
-	const char *np, char **ep, int base, int *err)
+	const char *np, const char **ep, int base, int *err)
 {
 	unsigned long long	r;
 	int					s;
-	int					max;
 
 	*err = 0;
 	s = ft_strtoi_parse_prefix_e(&np, &base, err);
