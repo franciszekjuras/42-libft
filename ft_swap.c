@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.c                                          :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 11:33:57 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/16 12:47:28 by fjuras           ###   ########.fr       */
+/*   Created: 2022/03/16 21:14:07 by fjuras            #+#    #+#             */
+/*   Updated: 2022/03/16 21:20:17 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_absu(int n)
+void	swapi(int *a, int *b)
 {
-	if (n < 0)
-		return (((unsigned int) -(n + 1)) + 1u);
-	return ((unsigned int) n);
-}
+	int	c;
 
-unsigned long long	ft_absull(long long n)
-{
-	if (n < 0)
-		return (((unsigned long long) -(n + 1)) + 1ull);
-	return ((unsigned long long) n);
-}
-
-int	ft_max(int n1, int n2)
-{
-	if (n1 > n2)
-		return (n1);
-	return (n2);
-}
-
-int	ft_min(int n1, int n2)
-{
-	if (n1 < n2)
-		return (n1);
-	return (n2);
+	c = *a;
+	*a = *b;
+	*b = c;
 }
