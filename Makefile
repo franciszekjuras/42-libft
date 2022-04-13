@@ -16,7 +16,7 @@ $(NAME): $(OFILES)
 	ar rcs $@ $?
 
 $(OFILES): %.o: %.c
-	gcc $(CFLAGS) -c $< -o $@
+	gcc $(CFLAGS) $(OPTIM) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

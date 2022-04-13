@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/03/19 15:01:43 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/04/10 17:21:29 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ typedef enum e_strtoi_err
 }	t_strtoi_err;
 
 void			ft_swapi(int *a, int *b);
+void			ft_swapp(void **p1, void **p2);
 unsigned int	ft_absu(int n);
 t_ull			ft_absull(long long n);
+int				ft_abs(int n);
 int				ft_max(int n1, int n2);
 int				ft_min(int n1, int n2);
 int				ft_isascii(int c);
