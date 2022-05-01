@@ -6,14 +6,13 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 10:03:46 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/01 23:17:55 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/01 23:18:50 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_UTILS_H
 # define FT_PRINTF_UTILS_H
 
-# include <stdio.h>
 # include <stdarg.h>
 
 # define FT_PRINTF_FLAGS "-+ #0"
