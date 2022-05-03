@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 10:20:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/01 23:16:13 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/03 15:15:46 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	ft_putnbrcmn_format_fd(
 	return (r[0] + r[1] + r[2] + r[3]);
 }
 
-unsigned long long	ft_putunsigned_format_fd(
+int	ft_putunsigned_format_fd(
 	t_ft_va_list *list, int fd, t_printf_format format)
 {
 	char				buf[FT_PRINTF_BUF];
@@ -76,6 +76,8 @@ unsigned long long	ft_putunsigned_format_fd(
 		content = ft_ulltoa_base_buf(nbr, 8, buf, FT_PRINTF_BUF);
 	else if (format.specifier == 'b')
 		content = ft_ulltoa_base_buf(nbr, 2, buf, FT_PRINTF_BUF);
+	else
+		return (-1);
 	if (format.specifier == 'X')
 		content = ft_strtoupper(content);
 	prefix = "";

@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:01:34 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/01 23:15:39 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/03 16:22:26 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static char	*parse_line(t_list *node, size_t i)
 	return (line);
 }
 
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	t_list			*node;
 	char			*buf;
