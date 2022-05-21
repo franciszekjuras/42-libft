@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/21 14:27:42 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:14:15 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef enum e_strtoi_err
 typedef struct s_ft_argparse
 {
 	char	arg;
+	char	count;
 	char	**params;
 }	t_ft_argparse;
 

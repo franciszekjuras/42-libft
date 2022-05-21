@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argparse.c                                         :+:      :+:    :+:   */
+/*   ft_argparse.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:14:31 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/21 14:40:51 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:14:48 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static int	ft_argparse_next(
 		++beg;
 	while (beg + params < argc && ft_argparse_arg_id(argv[beg + params]) == 0)
 		++params;
+	arg->count = params;
 	arg->params = ft_calloc(params + 1, sizeof(char *));
 	i = 0;
 	while (i < params)
