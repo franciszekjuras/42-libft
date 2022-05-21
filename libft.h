@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/21 15:14:15 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:26:33 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_ft_argparse
 
 /*argparse*/
 t_ft_argparse	*ft_argparse(int argc, char **argv);
+t_ft_argparse	*ft_argparse_find(t_ft_argparse *args, char arg);
 t_ft_argparse	*ft_argparse_free(t_ft_argparse *args);
 
 /*get_next_line*/

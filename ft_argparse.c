@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:14:31 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/21 15:14:48 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/21 15:41:00 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,15 @@ t_ft_argparse	*ft_argparse(int argc, char **argv)
 		i = ft_argparse_next(argc, argv, i, args + arg_idx);
 		++arg_idx;
 	}
+	return (args);
+}
+
+t_ft_argparse	*ft_argparse_find(t_ft_argparse *args, char arg)
+{
+	while (args->arg != 0 && args->arg != arg)
+		++args;
+	if (args->arg == 0)
+		return (NULL);
 	return (args);
 }
 
