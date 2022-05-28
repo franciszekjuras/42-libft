@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/28 12:24:24 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/28 14:02:14 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ typedef enum e_strtoi_err
 	FT_STRTOI_OVERFLOW = 0x02,
 	FT_STRTOI_EMPTY = 0x04
 }	t_strtoi_err;
+
+typedef struct s_ft_argparse
+{
+	char	arg;
+	char	count;
+	char	**params;
+}	t_ft_argparse;
+
+/*argparse*/
+t_ft_argparse	*ft_argparse(int argc, char **argv);
+t_ft_argparse	*ft_argparse_find(t_ft_argparse *args, char arg);
+t_ft_argparse	*ft_argparse_free(t_ft_argparse *args);
 
 /*get_next_line*/
 char			*ft_get_next_line(int fd);
@@ -79,6 +91,18 @@ t_ull			ft_strtoull_e(
 					const char *np, char **ep, int base, int *err);
 long long		ft_strtonum(
 					char **npp, long long min, long long max, int *err);
+
+/**
+ * @brief convert string to floating point number represented by integer
+ * base and power of 10
+ * 
+ * @param np string
+ * @param base pointer to store base number
+ * @param pow pointer to store power
+ * @param err pointer to store error status
+ * @return char* pointer past end of valid number
+ */
+char			*ft_strtofp(char *np, long long *base, int *pow10, int *err);
 
 /**
  * @brief 
