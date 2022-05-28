@@ -6,7 +6,7 @@
 /*   By: fjuras <fjuras@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:38:47 by fjuras            #+#    #+#             */
-/*   Updated: 2022/05/01 23:13:17 by fjuras           ###   ########.fr       */
+/*   Updated: 2022/05/28 12:24:24 by fjuras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,16 @@ void			*ft_memcpy(void *dst, const void *src, size_t len);
  * @return void* pointer to destination
  */
 void			*ft_memmove(void *dst, const void *src, size_t len);
+
+/**
+ * @brief Allocate and join two paths, adding slash if necessary.
+ * Does not handle relative paths in a special way
+ * 
+ * @param s1 first part of path
+ * @param s2 second part of path
+ * @return char* joined path string
+ */
+char			*ft_pathjoin(char const *s1, char const *s2);
 
 /**
  * @brief
